@@ -1,0 +1,7 @@
+subset,model,rmse_kg_ha
+1989--2025 Landsat,Management only,1821.5158296253971
+1989--2025 Landsat,+ plot Landsat,1874.758215916965
+2017--2023 dual-sensor,Management only,1674.8643944376167
+2017--2023 dual-sensor,+ Landsat,2275.9624024136847
+2017--2023 dual-sensor,+ Sentinel-2,2182.1976242511823
+2017--2023 dual-sensor,+ both sensors,2845.312205707

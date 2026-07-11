@@ -1,0 +1,167 @@
+# Seasonal heat and dryness are associated with lower marginal nitrogen responses in a long-term field experiment
+
+## Abstract
+
+Fertilizer recommendations commonly assume that the yield gained from nitrogen is stable across seasons. That assumption may fail when heat and water availability constrain crop nitrogen uptake. We analysed 27 years of yield records from the Kellogg Biological Station Resource Gradient Experiment, which combines a repeated nine-rate nitrogen gradient with concurrent irrigated treatments. Across 1,005 rainfed plot-year records, a one-standard-deviation increase in seasonal heat and dryness was associated with a 254.6 kg ha-1 smaller marginal yield response per 100 kg N (year-clustered 95% confidence interval, -393.0 to -116.2). Resampling the 27 season-level weather states produced a wider interval (-546.0 to 323.4 kg ha-1), showing greater uncertainty when years rather than plot records were resampled. The concurrent irrigation contrast had a positive point estimate for the season-specific response, but its annual-resampling interval included zero. Plot-resolved, preharvest Landsat and Sentinel-2 features did not provide reliable evidence of improved future-year yield prediction beyond known crop and management variables. Long-term fertilizer experiments can therefore estimate season-specific nitrogen responses only when treatment replication is distinguished from replication of seasonal weather.
+
+## Introduction
+
+Nitrogen response curves underpin fertilizer recommendations, yet they are generally interpreted as though the return to an additional unit of nitrogen were stable across seasons [@nitrogen_response_2022; @managing_nitrogen_sustainable_development_2015; @managing_nitrogen_china_2019]. This assumption also matters for the wider challenge of sustaining production within environmental limits [@feeding_ten_billion_boundaries_2020]. Temperature and water deficits can alter crop development, nitrogen uptake and the conversion of applied nitrogen into harvested yield [@temperature_crop_yields_2009; @nitrogen_under_water_stress_2024]. The central management question is therefore simple: when seasonal water limitation intensifies, does the marginal return to nitrogen change?
+
+Long-running field experiments are unusually suited to this question because they retain treatment contrasts while crops and weather vary. They have shown that nitrogen responses and production stability depend on the environment in which management is repeated [@long_term_weather_yield_2017]. Extreme heat and drought are established constraints on crop production [@climate_trends_crop_production_2011; @extreme_weather_crop_production_2016], and future risk depends on adaptation as well as exposure [@agricultural_risk_climate_2014; @climate_productivity_growth_2021; @climate_impacts_models_2021]. What remains less directly tested is whether a fixed nitrogen gradient changes slope across these seasonal conditions within one experiment, and whether an experimental water-availability contrast alters the same response.
+
+The Kellogg Biological Station Long-Term Ecological Research (KBS LTER) Resource Gradient Experiment (RGE) provides a repeated nine-rate nitrogen gradient under rainfed management from 1999 and an irrigated comparison from 2003. The rotation has included corn, soybean and wheat since 2006 [@kbs_lter_data_catalog_robertson_2020; @kbs_lter_public_downloads]. We predicted that marginal nitrogen responses would be lower in hotter, drier seasons and that irrigation would attenuate this seasonal difference. Because all plots within a year share the same weather exposure, inference about this prediction must distinguish plot-level treatment replication from the number of season-level weather states.
+
+A second prediction concerned the practical value of imagery. We linked phenology-aligned Landsat and Sentinel-2 features to observed Main Cropping System Experiment (MCSE) harvest records and tested whether preharvest spectral information added predictive value beyond known crop and management variables in a future season. The nested year-held-out design separates apparent spatial fit from out-of-year information [@satellite_crop_yield_mapper_2015; @satellite_ml_2021; @structured_cv_2017].
+
+Figure 1 situates the plot-resolved KBS and AOI-level Rothamsted imagery records, experimental support, quality layers and phenology coverage used to construct the linked remote-sensing panels.
+
+## Results
+
+### Heat-dry years were associated with lower marginal nitrogen responses
+
+Across 1,005 rainfed records from 76 plots and 27 harvest years, the plot- and year-fixed-effect estimate for the nitrogen-by-heat-dry interaction was -254.6 kg ha-1 per 100 kg N for a one-standard-deviation increase in the heat-dry index (year-clustered 95% confidence interval, -393.0 to -116.2; Fig. 3b). Rainfed dose-response curves also separated across lower, middle and higher heat-dry years (Fig. 3a). Heat-only and dry-day-only models returned negative interaction estimates (Figure S2). Each harvest year contained one crop group, so crop intercepts are not separately identifiable from year fixed effects; the model instead allows crop-specific nitrogen slopes (Figure S8).
+
+The interaction estimate remained negative when each harvest year was excluded in turn (Fig. 3c) and across all 351 models excluding each pair of harvest years (range, -356.9 to -162.4 kg ha-1; Figure S8). Year-level diagnostics were less precise: the complete-year bootstrap interval ranged from -546.0 to 323.4 kg ha-1 and the permutation test gave *P* = 0.236 (Fig. 3d). Thus, omission of one or two years did not reverse the fixed-effect sign, whereas inference over the distribution of annual weather states remained imprecise.
+
+### The irrigation contrast was consistent with a more favourable response in hotter, drier seasons
+
+In the 23 seasons with concurrent rainfed and irrigated gradients (1,674 records from 72 plots), the irrigation-by-nitrogen-by-heat-dry coefficient was +443.4 kg ha-1 per 100 kg N (year-clustered 95% confidence interval, 263.9 to 622.9; Fig. 4a,b). This point estimate was consistent with a more favourable nitrogen response under irrigation in hotter, drier seasons.
+
+The complete-year bootstrap interval for this coefficient was -221.5 to 606.5 kg ha-1, with 93% of draws positive (Fig. 4c); the year-label permutation test gave *P* = 0.098 (Fig. 4d). The contrast was consistent with water limitation as one explanation, but the annual-level uncertainty remained wide.
+
+### Preharvest imagery did not provide reliable out-of-year predictive gain
+
+Preharvest imagery did not provide reliable evidence of improved prediction for a future calendar year. The matched MCSE panel contained 876 observed Treatment x Replicate harvest records, including 830 with preharvest Landsat features and 216 with Sentinel-2 coverage. Features were summarized within the matched plot polygon and ended before the recorded harvest half-month (Fig. 5a,b).
+
+For the 1989--2025 Landsat panel, management-only ridge regression achieved an outer leave-one-calendar-year-out root-mean-square error (RMSE) of 1,821.5 kg ha-1; adding Landsat increased RMSE to 1,874.8 kg ha-1. The same pattern held in the matched 2017--2023 dual-sensor subset (Fig. 5c). Across the 37 independently held-out years, mean and median RMSE were also higher after adding Landsat (1,656.8 versus 1,543.7 kg ha-1 and 1,364.6 versus 1,280.6 kg ha-1, respectively; Extended Data Fig. 9). The year-block bootstrap interval for the Landsat-versus-management mean-squared-error (MSE) increment crossed zero (Fig. 5d).
+
+## Discussion
+
+In the rainfed KBS gradient, the plot- and year-fixed-effect estimate linked hotter, drier seasons to a lower marginal nitrogen response. Long-term nitrogen syntheses show substantial variation among cropping systems and environments [@nitrogen_response_2022; @global_nue_trends_2014]. The KBS analysis adds a within-experiment estimate while keeping treatment gradients, location and plot structure fixed. Fertilizer recommendations based on average response curves should state the seasonal conditions under which those curves were estimated.
+
+The irrigation contrast is consistent with a water-limitation interpretation. Water stress can constrain nutrient acquisition and the canopy processes through which nitrogen is converted to yield [@temperature_extremes_plant_growth_2015; @nitrogen_under_water_stress_2024]. The positive three-way point estimate did not isolate water availability from every process associated with irrigation, but it aligned with the predicted direction of a more favourable nitrogen response when water was supplied.
+
+In long-term experiments, plot replication and weather replication address different inferential questions. Plot replication identifies a treatment response, whereas the number of years limits inference about weather modification of that response. The interaction estimate remained negative in leave-one-year-out analyses, but its magnitude was imprecise under complete-year resampling. Reporting both quantities prevents plot replication from being mistaken for additional replication of seasonal weather and makes climate-by-management analyses easier to compare across experiments [@cluster_robust_inference_2015].
+
+Under nested future-year evaluation, the available Landsat and Sentinel-2 feature blocks did not provide reliable incremental information beyond crop, treatment and replicate. Plot masks, quality layers and harvest-aware feature windows produced a quality-controlled preharvest panel, but neither the pooled nor outer-year diagnostics supported a predictive gain. Satellite covariates can be valuable when spatial labels are abundant [@satellite_crop_yield_mapper_2015; @satellite_ml_2021]; in this small, temporally structured yield panel, temporal separation was more informative than apparent spatial detail.
+
+The study is limited to one long-term experiment and 27 annual weather states; the annual-resampling intervals do not establish a precisely estimated universal effect. Irrigation is a management contrast rather than a direct manipulation of weather, and the satellite evaluation is an internal temporal benchmark rather than external validation. The estimates are internal to KBS and require replication across independent gradients before they inform region-wide fertilizer recommendations. Direct heat and rainfall manipulations, prospective plot-level yield campaigns and independent long-term experiments are the next tests. These responses are one component of broader agricultural adaptation, alongside choices such as crop switching [@climate_agriculture_adaptation_2025; @crop_switching_climate_losses_2020].
+
+## Methods
+
+### Study system, source data and analytical panels
+
+We used the KBS LTER Resource Gradient Experiment public agronomic-yield table (KBS033-001) and annual KBS station weather records. The experiment applies nine fertilizer treatments (F1--F9) to annual crops under rainfed conditions from 1999 and parallel irrigated conditions from 2003. Continuous corn was grown during 1999--2005; the subsequent rotation includes corn, soybean and wheat. The provider records identify treatment, replicate, plot and irrigation status, but do not provide a year-by-year randomization record. We therefore analyse this as a long-running plot-fixed treatment gradient, not as annually rerandomized treatment allocation. Yield is reported at crop-specific standard moisture content in kg ha-1 [@kbs_lter_data_catalog_robertson_2020; @kbs_lter_public_downloads].
+
+For the rainfed response analysis, we retained observations with non-missing yield, recovered nitrogen rate, plot identifier, harvest year, crop group and heat-dry index. Of 1,016 rainfed source records, 11 lacked yield and were excluded; this gave 1,005 records from 76 plots across 27 years (1999--2025). The irrigation analysis used the same inclusion criteria and was restricted to years represented by both irrigation states, giving 1,674 records from 72 plots across 23 years (2003--2025). No observations were imputed for yield, crop, plot, year or weather; missing fertilizer-rate fields were recovered only from the documented treatment schedule described below.
+
+### Fertilizer-rate recovery
+
+The yield file identifies plot, treatment, replicate, crop, irrigation status, harvest year and fertilizer rate. Later records retain the F1--F9 treatment identifier although their rate field is blank. We reconstructed only those blanks from the documented crop-specific schedule after verifying exact agreement with all 1,412 non-missing provider values. The complete schedule and recovery audit are in Supplementary Table 2 and Extended Data Fig. 1.
+
+### Climate index
+
+Annual KBS station weather records were summarized from 1 April through 31 October. The primary heat-dry index was the equally weighted sum of standardized annual heat days above 30 C and dry days with precipitation below 1 mm, divided by sqrt(2). Heat-day and dry-day components were fitted separately as prespecified sensitivity analyses. Full variable definitions are provided in Supplementary Table 1.
+
+### Nitrogen-response models
+
+For the rainfed analysis, we fit ordinary least squares models with fixed effects for year and plot, crop-specific nitrogen slopes, a nitrogen-by-heat-dry interaction and a nitrogen-by-time term. For observation *i* in plot *p*, year *t* and crop *c*, the fitted specification was
+
+\[
+Y_{ipt} = \alpha_p + \gamma_t + \delta_c N_{ipt} + \beta N_{ipt}S_t + \tau N_{ipt}T_t + \varepsilon_{ipt}.
+\]
+
+Here, *N* is nitrogen expressed in 100 kg ha-1 units, *S* is the standardized heat-dry index, and *T* is centered linear time in decades. Thus, \(\beta\) is the change in marginal yield response for 100 kg N and one standard deviation of heat-dry stress. Each harvest year has one crop group, making crop intercepts perfectly collinear with year fixed effects; crop-specific nitrogen slopes account for differences in the documented treatment schedule among corn, wheat and soybean without attempting to estimate those unidentified intercepts. Crop-year support is shown in Supplementary Table 6 and Extended Data Fig. 8. Conventional intervals used covariance clustered by harvest year.
+
+The irrigation model was restricted to 2003--2025, when rainfed and irrigated gradients were concurrently observed. It added nitrogen-by-irrigation and nitrogen-by-heat-dry-by-irrigation terms. The three-way coefficient quantifies the irrigated-minus-rainfed difference in the season-specific nitrogen response.
+
+### Uncertainty and robustness
+
+We refit the rainfed model after excluding each year and after excluding every pair of years, resampled complete years with replacement (240 draws for the rainfed interaction and 300 draws for the irrigation interaction), and permuted the observed annual stress labels 600 times. Each bootstrap retained all eligible records within a sampled year, assigned a bootstrap-year fixed effect to repeated draws, and refit the prespecified model. Each permutation retained all plot-level outcomes, treatments and year fixed effects but reassigned the one observed stress value per year. These procedures evaluate uncertainty over the 27 or 23 season-level weather states while preserving the within-year treatment structure. The original resampling used seed 20260710; the leave-two-year-out diagnostic used deterministic enumeration.
+
+### Plot-level remote-sensing panel and temporal validation
+
+KBS Landsat and Sentinel-2 Gold cubes contain six spectral bands, valid masks, clear fraction, observation count, time-gap layers and plot support masks. We linked the MCSE annual-yield table to the documented Treatment x Replicate plot crosswalk, summarized only pixels within the matched polygon, and stopped every trajectory before the observed harvest half-month. The per-sensor feature block comprised normalized difference vegetation index (NDVI) mean, maximum, final value and slope; normalized difference water index (NDWI) and normalized burn ratio (NBR) means; red, near-infrared and short-wave-infrared means; and clear fraction, observation count, valid fraction and time gap. These choices follow established Landsat and spectral-index conventions [@landsat_program_2019; @spectral_indices_2023], while treating the two sensor streams as complementary covariate sources [@remote_sensing_fusion_2019]. This produced 876 observed plot-yield records, including 830 with Landsat features and 216 with Sentinel-2 coverage.
+
+We compared ridge regression using known crop, treatment and replicate against the same baseline plus preharvest Landsat, Sentinel-2 or combined feature blocks. For every held-out calendar year, median imputation, standardization, one-hot encoding and ridge-penalty selection occurred within the remaining training years only. The inner loop was a GroupKFold split by calendar year, with up to five folds; the ridge penalty was selected from 0.1, 1, 10, 100 and 1,000 by mean inner-fold MSE. We report pooled RMSE from outer leave-one-calendar-year-out predictions and a 5,000-draw year-block bootstrap for the management-versus-Landsat MSE difference. This design follows the principle that temporally structured observations should not be randomly split across training and evaluation sets [@structured_cv_2017; @blockcv_2019].
+
+### Reporting and reproducibility
+
+All reported analyses have scripts, result tables and figure-source CSVs. The rate-recovery script fails if any non-missing public fertilizer-rate entry differs from the documented schedule. The computational environment is specified in `requirements_v7_1_20260710.txt`: numpy 2.3.5, pandas 2.3.3, matplotlib 3.10.8, scipy 1.16.0, statsmodels 0.14.6 and scikit-learn 1.8.0. Supplementary Methods list the scripts and source-data products used by each analysis. The reported analyses use public KBS source records only.
+
+## Figure Legends
+
+**Fig. 1 | Remote-sensing data landscape.** **a--c**, Plot-resolved Sentinel-2 false-colour imagery, experimental plot support and plot-boundary distance at KBS. **d**, Historical Landsat coverage of the KBS study area. **e--g**, AOI-level Rothamsted imagery context, the KBS 24-step preharvest phenology sequence and sensor/site coverage. The KBS data products are plot-resolved; Rothamsted imagery is used only as AOI-level context and is not interpreted as official plot-boundary support.
+
+**Fig. 2 | Experimental gradient and evidence base.** **a**, Documented F1--F9 nitrogen schedules for corn, wheat and soybean in the KBS Resource Gradient Experiment; rates are kg N ha-1. **b**, Number of public yield records and the standardized annual heat-dry index for the 27 harvest years, 1999--2025. **c**, Independent weather denominators for the rainfed analysis (27 years, 1,005 plot-year records, 76 plots) and the concurrent rainfed-irrigated analysis (23 years, 1,674 plot-year records, 72 plots). **d**, Rainfed analysis records with reported and schedule-recovered nitrogen rates. The crop-specific schedule matched all 1,412 non-missing public rate entries before any blank was filled.
+
+**Fig. 3 | Association between the heat-dry index and the rainfed nitrogen response.** Rainfed panel: 1,005 plot-year records, 76 plots and 27 harvest years. **a**, Pooled treatment means by annual heat-dry tercile; points are mean yields at each documented nitrogen rate and error bars are standard errors across available records. **b**, Nitrogen-by-weather interaction estimates from models with plot and year fixed effects, crop-specific nitrogen slopes and a nitrogen-by-time adjustment; horizontal bars are year-clustered 95% confidence intervals. **c**, Primary heat-dry interaction after excluding one harvest year at a time; points are coefficient estimates and horizontal bars are year-clustered 95% confidence intervals. **d**, Null distribution from 600 permutations of annual heat-dry labels; solid and dashed vertical lines show the observed coefficient and its absolute value, respectively.
+
+**Fig. 4 | Irrigation contrast under lower and higher heat-dry conditions.** Concurrent panel: 1,674 plot-year records, 72 plots and 23 harvest years (2003--2025). **a**, Pooled treatment means for rainfed and irrigated gradients in lower and higher heat-dry years; points are mean yields and error bars are standard errors. **b**, Rainfed nitrogen-by-stress and nitrogen-by-stress-by-irrigation coefficients from a model with year and plot fixed effects, crop-specific nitrogen slopes and a nitrogen-by-time adjustment; horizontal bars are year-clustered 95% confidence intervals. **c**, Distribution of 300 complete-year bootstrap estimates for the irrigation-by-weather coefficient; the vertical line marks the observed estimate. **d**, Null distribution from 600 permutations of annual heat-dry labels; the vertical line marks the observed coefficient.
+
+**Fig. 5 | Plot-resolved satellite covariates and temporally separated yield prediction.** **a**, Preharvest Sentinel-2 NDVI extracted within matched MCSE plot polygons in 2023; the displayed plot boundary identifies the extraction support. **b**, Count of observed Treatment x Replicate harvest records with harvest-truncated Landsat and Sentinel-2 covariates by year. **c**, Pooled RMSE from nested leave-one-calendar-year-out ridge regression. Management variables are crop group, treatment and replicate; imputation, scaling, encoding and penalty selection were refit in each training fold. Models are compared only within their matching time subset: 830 Landsat-feature records from 1989--2025 and 216 dual-sensor records from 2017--2023. **d**, Distribution of 5,000 year-block bootstrap MSE differences between management plus Landsat and management-only models; the vertical line marks the observed difference.
+
+## Data and code availability
+
+KBS LTER public yield and weather records are available through the KBS LTER Data Catalog [@kbs_lter_public_downloads]. The processed analysis panels, figure-source CSVs, bootstrap and permutation draws, scripts, environment specification and documentation supporting this article are publicly available at https://github.com/ahvsjags/AgroEcoMargin-reproducibility. Provider-controlled data are not redistributed or used in the analyses reported here.
+
+## References
+
+1. van Grinsven, H.J.M.; Ebanyat, P.; Glendining, M.; Gu, B.; Hijbeek, R.; Lam, S.K.; Lassaletta, L.; Mueller, N.D.; Pacheco, F.S.; Quemada, M.; Bruulsema, T.W.; Jacobsen, B.H.; ten Berge, H.F.M. Establishing long-term nitrogen response of global cereals to assess sustainable fertilizer rates. Nat. Food 2022, 3, 2, 122-132. https://doi.org/10.1038/s43016-021-00447-x
+
+2. Jägermeyr, J.; Müller, C.; Ruane, A.C.; Elliott, J.; Balkovic, J.; Castillo, O.; Faye, B.; Foster, I.; Folberth, C.; Franke, J.A.; Fuchs, K.; Guarin, J.R.; Heinke, J.; Hoogenboom, G.; Iizumi, T.; Jain, A.K.; Kelly, D.; Khabarov, N.; Lange, S.; Lin, T.S.; Liu, W.; Mialyk, O.; Minoli, S.; Moyer, E.J.; Okada, M.; Phillips, M.; Porter, C.; Rabin, S.S.; Scheer, C.; Schneider, J.M.; Schyns, J.F.; Skalsky, R.; Smerald, A.; Stella, T.; Stephens, H.; Webber, H.; Zabel, F.; Rosenzweig, C. Climate impacts on global agriculture emerge earlier in new generation of climate and crop models. Nat. Food 2021, 2, 11, 873-885. https://doi.org/10.1038/s43016-021-00400-y
+
+3. Hultgren, A.; Carleton, T.; Delgado, M.; Gergel, D.R.; Greenstone, M.; Houser, T.; Hsiang, S.; Jina, A.; Kopp, R.E.; Malevich, S.B.; McCusker, K.E.; Mayer, T.; Nath, I.; Rising, J.; Rode, A.; Yuan, J. Impacts of climate change on global agriculture accounting for adaptation. Nature 2025, 642, 8068, 644-652. https://doi.org/10.1038/s41586-025-09085-w
+
+4. Robertson, P. Kellogg Biological Station (KBS) Long Term Ecological Research (LTER) Data Catalog; Long Term Ecological Research Network, 2020. Available online: https://hdl.handle.net/10113/AA23994 (accessed on 2 July 2026).
+
+5. Kellogg Biological Station Long-Term Ecological Research Program. KBS LTER Public Downloads. Available online: https://lter.kbs.msu.edu/datatables (accessed on 2 July 2026).
+
+6. Rolf, E.; Proctor, J.; Carleton, T.; Bolliger, I.; Shankar, V.; Ishihara, M.; Recht, B.; Hsiang, S. A generalizable and accessible approach to machine learning with global satellite imagery. Nat. Commun. 2021, 12, 1, 4392. https://doi.org/10.1038/s41467-021-24638-z
+
+7. Montero, D.; Aybar, C.S.; Mahecha, M.D.; Martinuzzi, F.; Söchting, M.; Wieneke, S. A standardized catalogue of spectral indices to advance the use of remote sensing in Earth system research. Sci. Data 2023, 10, 1, 197. https://doi.org/10.1038/s41597-023-02096-0
+
+8. Yu, C.; Huang, X.; Chen, H.; Godfray, H.C.J.; Wright, J.S.; Hall, J.W.; Gong, P.; Ni, S.; Qiao, S.; Huang, G.; Xiao, Y.; Zhang, J.; Feng, Z.; Ju, X.; Ciais, P.; Stenseth, N.C.; Hessen, D.O.; Sun, Z.; Yu, L.; Cai, W.; Fu, H.; Huang, X.; Zhang, C.; Liu, H.; Taylor, J. Managing nitrogen to restore water quality in China. Nature 2019, 567, 7749, 516-520. https://doi.org/10.1038/s41586-019-1001-1
+
+9. Rising, J.; Devineni, N. Crop switching reduces agricultural losses from climate change in the United States by half under RCP 8.5. Nat. Commun. 2020, 11, 1, 4991. https://doi.org/10.1038/s41467-020-18725-w
+
+10. Wulder, M.A.; Loveland, T.R.; Roy, D.P.; Crawford, C.J.; Masek, J.G.; Woodcock, C.E.; Allen, R.G.; Anderson, M.C.; Belward, A.S.; Cohen, W.B.; Dwyer, J.; Erb, A.; Gao, F.; Griffiths, P.; Helder, D.; Hermosilla, T.; Hipple, J.D.; Hostert, P.; Hughes, M.J.; Huntington, J.; Johnson, D.M.; Kennedy, R.; Kilic, A.; Li, Z.; Lymburner, L.; McCorkel, J.; Pahlevan, N.; Scambos, T.A.; Schaaf, C.; Schott, J.R.; Sheng, Y.; Storey, J.; Vermote, E.; Vogelmann, J.; White, J.C.; Wynne, R.H.; Zhu, Z. Current status of Landsat program, science, and applications. Remote Sens. Environ. 2019, 225, 127-147. https://doi.org/10.1016/j.rse.2019.02.015
+
+11. Ghamisi, P.; Gloaguen, R.; Atkinson, P.M.; Benediktsson, J.A.; Rasti, B.; Yokoya, N.; Wang, Q.; Hofle, B.; Bruzzone, L.; Bovolo, F.; Chi, M.; Anders, K. Multisource and Multitemporal Data Fusion in Remote Sensing: A Comprehensive Review of the State of the Art. IEEE Geosci. Remote Sens. Mag. 2019, 7, 1, 6-39. https://doi.org/10.1109/MGRS.2018.2890023
+
+12. Zhang, X.; Davidson, E.A.; Mauzerall, D.L.; Searchinger, T.D.; Dumas, P.; Shen, Y. Managing nitrogen for sustainable development. Nature 2015, 528, 7580, 51-59. https://doi.org/10.1038/nature15743
+
+13. Lassaletta, L.; Billen, G.; Grizzetti, B.; Anglade, J.; Garnier, J. 50 year trends in nitrogen use efficiency of world cropping systems: the relationship between yield and nitrogen input to cropland. Environ. Res. Lett. 2014, 9, 10, 105011. https://doi.org/10.1088/1748-9326/9/10/105011
+
+14. Schlenker, W.; Roberts, M.J. Nonlinear temperature effects indicate severe damages to U.S. crop yields under climate change. Proc. Natl. Acad. Sci. USA 2009, 106, 37, 15594-15598. https://doi.org/10.1073/pnas.0906865106
+
+15. Lobell, D.B.; Schlenker, W.; Costa-Roberts, J. Climate Trends and Global Crop Production Since 1980. Science 2011, 333, 6042, 616-620. https://doi.org/10.1126/science.1204531
+
+16. Ortiz-Bobea, A.; Ault, T.R.; Carrillo, C.M.; Chambers, R.G.; Lobell, D.B. Anthropogenic climate change has slowed global agricultural productivity growth. Nat. Clim. Chang. 2021, 11, 4, 306-312. https://doi.org/10.1038/s41558-021-01000-1
+
+17. Hatfield, J.L.; Prueger, J.H. Temperature extremes: Effect on plant growth and development. Weather Clim. Extrem. 2015, 10, 4-10. https://doi.org/10.1016/j.wace.2015.08.001
+
+18. Drobnitch, S.T.; Donovan, T.C.; Wenz, J.A.; Flynn, N.E.; Schipanski, M.E.; Comas, L.H. Can nitrogen availability impact plant performance under water stress? A review of traits, mechanisms, and whole plant effects. Plant Soil 2025, 511, 1-2, 45-67. https://doi.org/10.1007/s11104-024-07006-w
+
+19. Teasdale, J.R.; Cavigelli, M.A. Meteorological fluctuations define long-term crop yield patterns in conventional and organic production systems. Sci. Rep. 2017, 7, 1, 688. https://doi.org/10.1038/s41598-017-00775-8
+
+20. Cameron, A.C.; Miller, D.L. A Practitioner’s Guide to Cluster-Robust Inference. J. Hum. Resour. 2015, 50, 2, 317-372. https://doi.org/10.3368/jhr.50.2.317
+
+21. Roberts, D.R.; Bahn, V.; Ciuti, S.; Boyce, M.S.; Elith, J.; Guillera‐Arroita, G.; Hauenstein, S.; Lahoz‐Monfort, J.J.; Schröder, B.; Thuiller, W.; Warton, D.I.; Wintle, B.A.; Hartig, F.; Dormann, C.F. Cross‐validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure. Ecography 2017, 40, 8, 913-929. https://doi.org/10.1111/ecog.02881
+
+22. Valavi, R.; Elith, J.; Lahoz‐Monfort, J.J.; Guillera‐Arroita, G. <scp>block</scp>
+                    <scp>CV</scp>
+                    : An
+                    <scp>r</scp>
+                    package for generating spatially or environmentally separated folds for
+                    <i>k</i>
+                    ‐fold cross‐validation of species distribution models. Methods Ecol. Evol. 2019, 10, 2, 225-232. https://doi.org/10.1111/2041-210X.13107
+
+23. Lobell, D.B.; Thau, D.; Seifert, C.; Engle, E.; Little, B. A scalable satellite-based crop yield mapper. Remote Sens. Environ. 2015, 164, 324-333. https://doi.org/10.1016/j.rse.2015.04.021
+
+24. Gerten, D.; Heck, V.; Jägermeyr, J.; Bodirsky, B.L.; Fetzer, I.; Jalava, M.; Kummu, M.; Lucht, W.; Rockström, J.; Schaphoff, S.; Schellnhuber, H.J. Feeding ten billion people is possible within four terrestrial planetary boundaries. Nat. Sustain. 2020, 3, 3, 200-208. https://doi.org/10.1038/s41893-019-0465-1
+
+25. Lesk, C.; Rowhani, P.; Ramankutty, N. Influence of extreme weather disasters on global crop production. Nature 2016, 529, 7584, 84-87. https://doi.org/10.1038/nature16467
+
+26. Rosenzweig, C.; Elliott, J.; Deryng, D.; Ruane, A.C.; Müller, C.; Arneth, A.; Boote, K.J.; Folberth, C.; Glotter, M.; Khabarov, N.; Neumann, K.; Piontek, F.; Pugh, T.A.M.; Schmid, E.; Stehfest, E.; Yang, H.; Jones, J.W. Assessing agricultural risks of climate change in the 21st century in a global gridded crop model intercomparison. Proc. Natl. Acad. Sci. USA 2014, 111, 9, 3268-3273. https://doi.org/10.1073/pnas.1222463110

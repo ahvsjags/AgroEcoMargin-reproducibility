@@ -1,0 +1,7 @@
+# Delivery TIFFs remain in the manuscript submission package.
+*.tiff
+*.tmp.*
+
+# Local office and editor artifacts.
+~$*
+*.pdf

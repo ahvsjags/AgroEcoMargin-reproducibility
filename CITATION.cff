@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the associated manuscript and this release."
+title: "AgroEcoMargin: processed data and code for seasonal nitrogen-response analyses"
+version: "1.0.0"
+date-released: 2026-07-12
+url: "https://github.com/ahvsjags/AgroEcoMargin-reproducibility"
+authors:
+  - family-names: Xu
+    given-names: Pengyuan
+  - family-names: Zhang
+    given-names: Ge
+  - family-names: Yang
+    given-names: Guang
+  - family-names: Li
+    given-names: Moyan
