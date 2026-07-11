@@ -56,6 +56,8 @@ KEY_TO_SOURCE_NUMBER = {
     "feeding_ten_billion_boundaries_2020": 24,
     "extreme_weather_crop_production_2016": 25,
     "agricultural_risk_climate_2014": 26,
+    "kbs_rge_experiment": 27,
+    "kbs_soil_description": 28,
 }
 
 
@@ -115,7 +117,7 @@ def configure_mdpi(doc: Document) -> None:
         style.paragraph_format.space_after = Pt(after)
     footer = section.footer.paragraphs[0]
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    run = footer.add_run("Seasonal nitrogen responses | Page ")
+    run = footer.add_run("Page ")
     run.font.name = "Times New Roman"
     run.font.size = Pt(8)
     field = OxmlElement("w:fldSimple")
@@ -223,7 +225,7 @@ def add_supplementary_legend(doc: Document, number: int, legend: str) -> None:
 
 CAPTIONS = {
     1: "Remote-sensing data landscape. (a-c) Plot-resolved Sentinel-2 false-colour imagery, experimental plot support and plot-boundary distance at KBS. (d) Historical Landsat coverage of the KBS study area. (e-g) AOI-level Rothamsted imagery context, the KBS 24-step preharvest phenology sequence and sensor/site coverage. KBS data products are plot-resolved; Rothamsted imagery is AOI-level context only and is not used for plot-boundary inference.",
-    2: "Experimental gradient and annual weather support. (a) Documented F1-F9 nitrogen schedules for corn, wheat and soybean; F1-F9 denote the nine fertilizer treatments and rates are kg N ha-1. (b) Public yield-record counts and the standardized annual heat-dry index for 1999-2025. (c) Weather denominators for the rainfed and concurrent irrigated analyses. (d) Rainfed records with reported and schedule-recovered nitrogen rates.",
+    2: "Experimental gradient and annual weather support. (a) Documented F1–F9 nitrogen schedules for corn, wheat and soybean; F1–F9 denote the nine fertilizer treatments and rates are kg N ha⁻¹. (b) Public yield-record counts and the standardized annual heat-dry index for 1999–2025. (c) Weather denominators for the rainfed and concurrent irrigated analyses. (d) Rainfed records with reported and schedule-recovered nitrogen rates.",
     3: "Association between the heat-dry index and the rainfed nitrogen response. Rainfed panel: 1,005 plot-year records, 76 plots and 27 harvest years. (a) Treatment means by heat-dry tercile. (b) Plot- and year-fixed-effect interaction estimates with year-clustered 95% confidence intervals. (c) One-year-out estimates. (d) Null distribution from 600 year-label permutations.",
     4: "Irrigation contrast in the season-specific nitrogen response. Concurrent panel: 1,674 plot-year records, 72 plots and 23 harvest years. (a) Treatment means by irrigation state and heat-dry stratum. (b) Coefficients with year-clustered 95% confidence intervals. (c) Distribution of 300 complete-year bootstrap estimates. (d) Null distribution from 600 year-label permutations.",
     5: "Plot-resolved satellite covariates and temporally separated yield prediction. (a) Preharvest Sentinel-2 normalized difference vegetation index (NDVI) within matched Main Cropping System Experiment (MCSE) plot polygons. (b) Harvest-truncated feature support by year. (c) Nested leave-one-calendar-year-out root-mean-square error (RMSE). (d) Distribution of 5,000 year-block bootstrap mean-squared-error (MSE) differences between management-plus-Landsat and management-only models.",
@@ -345,7 +347,7 @@ def build_main() -> None:
     add_plain(doc, "At KBS, hotter and drier seasons were associated with a lower fixed-effect estimate of marginal nitrogen response. The concurrent irrigation contrast had a positive point estimate, but its annual-resampling interval included zero. The annual diagnostics distinguish treatment replication from replication of season-level weather. In the linked plot-yield panel, preharvest Landsat and Sentinel-2 features did not provide reliable evidence of incremental out-of-year information beyond management variables.")
 
     doc.add_heading("Supplementary Materials", level=1)
-    add_plain(doc, "The following supporting information is provided with this manuscript: Table S1: Analysis variables and provenance; Table S2: Documented F1-F9 nitrogen schedule; Table S3: Primary estimates and independent weather support; Table S4: Strict temporal satellite-yield validation; Table S5: Reproducibility map; Table S6: Crop-year support and coefficient identification; Figures S1-S10: supplementary diagnostics and validation figures; and source-data CSV files for all main and supplementary figures.")
+    add_plain(doc, "The following supporting information is provided with this manuscript: Table S1: Analysis variables and provenance; Table S2: Documented F1–F9 nitrogen schedule; Table S3: Primary estimates and independent weather support; Table S4: Strict temporal satellite-yield validation; Table S5: Reproducibility map; Table S6: Crop-year support and coefficient identification; Figures S1–S10: supplementary diagnostics and validation figures; and source-data CSV files for all main and supplementary figures.")
     doc.add_heading("Author Contributions", level=1)
     add_plain(doc, "Conceptualization, P.X. and M.L.; Methodology, P.X., G.Z. and G.Y.; Software, P.X.; Validation, P.X., G.Z. and G.Y.; Formal Analysis, P.X.; Investigation, P.X., G.Z. and G.Y.; Resources, G.Y. and M.L.; Data Curation, P.X.; Writing - Original Draft Preparation, P.X.; Writing - Review and Editing, P.X., G.Z., G.Y. and M.L.; Visualization, P.X.; Supervision, M.L.; Project Administration, P.X. and M.L.; Funding Acquisition, M.L. All authors have read and agreed to the published version of the manuscript.")
     doc.add_heading("Funding", level=1)
@@ -355,9 +357,9 @@ def build_main() -> None:
     doc.add_heading("Informed Consent Statement", level=1)
     add_plain(doc, "Not applicable.")
     doc.add_heading("Data Availability Statement", level=1)
-    add_plain(doc, "Public KBS LTER yield and weather records are available through the KBS LTER Data Catalog. The processed analysis panels, figure-source data, bootstrap and permutation outputs, code, environment specification and documentation supporting this article are available at https://github.com/ahvsjags/AgroEcoMargin-reproducibility. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.")
+    add_plain(doc, "Public KBS LTER yield and weather records are available through the KBS LTER Data Catalog. The processed analysis panels, figure-source data, bootstrap and permutation outputs, code, environment specification and documentation supporting this article are available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.1. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.")
     doc.add_heading("Use of Generative AI and AI-Assisted Technologies in the Writing Process", level=1)
-    add_plain(doc, "During the preparation of this manuscript, the authors used OpenAI Codex for language editing and document formatting. The authors reviewed and edited the output and take full responsibility for the content of this publication.")
+    add_plain(doc, "During preparation of this manuscript, the authors used OpenAI Codex to assist with language editing, document formatting and reproducible-workflow code refactoring. All analytical decisions, computations, figures and manuscript claims were reviewed and verified by the authors, who take full responsibility for the content of this publication.")
     doc.add_heading("Conflicts of Interest", level=1)
     add_plain(doc, "The authors declare no conflict of interest.")
 
@@ -423,7 +425,7 @@ def build_supporting() -> None:
 
 
 def write_readme() -> None:
-    text = """# Agriculture (MDPI) Submission Package\n\nThis package follows the *Agriculture* Article structure: title and author front matter, abstract, keywords, Introduction, Materials and Methods, Results, Discussion, Conclusions, Supplementary Materials, Author Contributions, Funding, Data Availability Statement, Conflicts of Interest and numbered references.\n\n## Repository and upload status\n\n- Processed data, source-data CSVs, code, documentation and figure assets are publicly available at https://github.com/ahvsjags/AgroEcoMargin-reproducibility.\n- The main Word file includes all Figures 1-5 after their first citation; Supporting Materials is supplied as a separate Word/PDF package.\n- Confirm author-system metadata, including emails and ORCIDs where available, before final MDPI submission.\n\nThe official *Agriculture* instructions require square-bracket numeric citations, a ca. 200-word single-paragraph abstract, three to ten keywords, the Article section order, and the back-matter declarations included here.\n"""
+    text = """# Agriculture (MDPI) Submission Package\n\nThis package follows the *Agriculture* Article structure: title and author front matter, abstract, keywords, Introduction, Materials and Methods, Results, Discussion, Conclusions, Supplementary Materials, Author Contributions, Funding, Data Availability Statement, Conflicts of Interest and numbered references.\n\n## Repository and upload status\n\n- Processed data, source-data CSVs, code, documentation and figure assets are publicly available in the fixed v1.0.1 release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.1.\n- The main Word file includes all Figures 1-5 after their first citation; Supporting Materials is supplied as a separate Word/PDF package.\n- Confirm author-system metadata, including emails and ORCIDs where available, before final MDPI submission.\n\nThe official *Agriculture* instructions require square-bracket numeric citations, a ca. 200-word single-paragraph abstract, three to ten keywords, the Article section order, and the back-matter declarations included here.\n"""
     (OUT / "README_Agriculture_submission_v1.md").write_text(text, encoding="utf-8")
 
 
