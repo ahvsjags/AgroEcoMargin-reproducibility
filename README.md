@@ -1,4 +1,4 @@
-# AgroEcoMargin reproducibility archive, release v1.0.2
+﻿# AgroEcoMargin reproducibility archive, release v1.0.3
 
 ## Scope
 
@@ -28,4 +28,4 @@ The KBS LTER public agronomic yield and weather tables remain available from the
 
 ## Public repository
 
-The public reproducibility repository for this release is https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.2. The repository contains the code, processed analytical products, source-data CSVs, PNG figure assets, documentation, an MIT license for original code and documentation, and the pinned environment required to reproduce the reported analyses. Large TIFF delivery files remain in the local submission package and are available upon editorial request.
+The public reproducibility repository for this release is https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.3. The repository contains the code, processed analytical products, source-data CSVs, PNG figure assets, documentation, an MIT license for original code and documentation, and the pinned environment required to reproduce the reported analyses. Large TIFF delivery files remain in the local submission package and are available upon editorial request.
