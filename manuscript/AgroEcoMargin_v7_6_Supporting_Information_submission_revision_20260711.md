@@ -110,7 +110,7 @@ Outer-fold predictions were pooled to calculate root-mean-square error (RMSE), m
 
 ## Supplementary Methods 7. Software, scripts and source-data index
 
-All analyses were run in Python using the pinned environment in `requirements_v7_1_20260710.txt`: numpy 2.3.5, pandas 2.3.3, matplotlib 3.10.8, scipy 1.16.0, statsmodels 0.14.6 and scikit-learn 1.8.0. Randomized analyses used seed 20260710. The submission archive contains the processed tables that underlie each panel, the bootstrap and permutation draws, and source CSVs for all figures. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.
+All analyses were run in Python using the pinned environment in `requirements_v7_1_20260710.txt`: numpy 2.3.5, pandas 2.3.3, matplotlib 3.10.8, scipy 1.16.0, statsmodels 0.14.6 and scikit-learn 1.8.0. Randomized analyses used seed 20260710. The public reproducibility archive contains the processed tables that underlie each panel, the bootstrap and permutation draws, and source CSVs for all figures. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.
 
 ### Table S5. Reproducibility map
 
@@ -119,9 +119,8 @@ All analyses were run in Python using the pinned environment in `requirements_v7
 | RGE rate recovery and rainfed model | `analysis_inputs/scripts/101_rebuild_rge_weather_n_inference.py` | `rge_weather_n_response_summary.csv`; bootstrap, permutation and leave-one-year-out draws | Primary weather-by-nitrogen inference |
 | Irrigation contrast | `analysis_inputs/scripts/104_test_rge_irrigation_mediation.py` | `rge_irrigation_weather_n_mechanism_paired_years_summary.csv`; bootstrap and permutation draws | Concurrent-year irrigation slope contrast |
 | MCSE plot-yield panel | `analysis_inputs/scripts/102_build_mcse_plot_remote_sensing_yield_panel.py` | `data/03_gold/mcse_plot_remote_sensing_yield_panel_gold.csv` | Harvest-truncated, plot-linked covariate construction |
-| Temporal satellite evaluation | `analysis_inputs/scripts/103_evaluate_mcse_plot_rs_yield_temporal.py` | `outputs/tables/mcse_plot_remote_sensing_temporal_evaluation.csv`; predictions and audit JSON | Nested leave-one-year-out comparison |
-| Submission robustness and outer-year diagnostics | `analysis_inputs/scripts/107_submission_robustness_and_remote_diagnostics.py` | Crop-year support, leave-two-year-out estimates and remote outer-year predictions, metrics and selected penalties | Finite-year and temporal-validation diagnostics |
-| DOI verification and MDPI reference formatting | `analysis_inputs/scripts/108_verify_and_format_mdpi_references.py` | `submission_revision/references_v7_6_crossref_audit.json` | Crossref metadata verification before final style check |
+| Temporal satellite evaluation | `analysis_inputs/scripts/103_evaluate_mcse_plot_rs_yield_temporal.py` | `outputs/tables/mcse_plot_remote_sensing_temporal_evaluation.csv`; predictions and diagnostic records | Nested leave-one-year-out comparison |
+| Robustness and outer-year diagnostics | `analysis_inputs/scripts/107_submission_robustness_and_remote_diagnostics.py` | Crop-year support, leave-two-year-out estimates and remote outer-year predictions, metrics and selected penalties | Finite-year and temporal-validation diagnostics |
 | Main and Extended Data figures | `analysis_inputs/scripts/105_build_v7_integrity_figure_suite.py`; `analysis_inputs/scripts/106_build_v7_extended_data_figures.py` | `analysis_outputs/figure_source_data_v7/` | Figure generation and panel-level source data |
 
 ## Supplementary Figure Legends
@@ -146,6 +145,6 @@ All analyses were run in Python using the pinned environment in `requirements_v7
 
 **Figure S10 | Remote-sensing Gold-cube QA and plot support.** KBS Sentinel-2 false-colour imagery and the pixel-level clear fraction, observation count, QA mode, time-gap support, layer availability and phenology-slot quality checks used to construct harvest-truncated covariates. White outlines identify the KBS plot support used for plot-resolved extraction.
 
-## Supplementary Data Package
+## Data and Code Availability
 
-The submission archive contains source CSV files for every main and Extended Data panel, model summaries, bootstrap and permutation draws, plotted values and scripts used to create the processed panels and figures. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.
+The public reproducibility archive contains source CSV files for every main and supplementary figure panel, model summaries, bootstrap and permutation draws, plotted values and scripts used to create the processed panels and figures. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.

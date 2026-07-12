@@ -358,7 +358,7 @@ def build_main() -> None:
     doc.add_heading("Informed Consent Statement", level=1)
     add_plain(doc, "Not applicable.")
     doc.add_heading("Data Availability Statement", level=1)
-    add_plain(doc, "Public KBS LTER yield and weather records are available through the KBS LTER Data Catalog. The processed analysis panels, figure-source data, bootstrap and permutation outputs, code, environment specification and documentation supporting this article are available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.5. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.")
+    add_plain(doc, "Public KBS LTER yield and weather records are available through the KBS LTER Data Catalog. The processed analysis panels, figure-source data, bootstrap and permutation outputs, code, environment specification and documentation supporting this article are available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.6. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.")
     doc.add_heading("Acknowledgments", level=1)
     add_plain(doc, "The authors acknowledge the Kellogg Biological Station Long-Term Ecological Research program and its data contributors for maintaining the public records used in this study.")
     doc.add_heading("Use of Generative AI and AI-Assisted Technologies in the Writing Process", level=1)
@@ -387,7 +387,7 @@ def build_supporting() -> None:
     source = source.replace("Extended Data Fig. ", "Figure S")
     source = source.replace("Extended Data Figure Legends", "Supplementary Figure Legends")
     legend_start = source.find("## Supplementary Figure Legends\n")
-    data_start = source.find("## Supplementary Data Package\n")
+    data_start = source.find("## Data and Code Availability\n")
     legends: dict[int, str] = {}
     if legend_start >= 0:
         legend_end = data_start if data_start >= 0 else len(source)
@@ -428,7 +428,7 @@ def build_supporting() -> None:
 
 
 def write_readme() -> None:
-    text = """# Agriculture (MDPI) Submission Package\n\nThis package follows the *Agriculture* Article structure: title and author front matter, abstract, keywords, Introduction, Materials and Methods, Results, Discussion, Conclusions, Supplementary Materials, Author Contributions, Funding, Data Availability Statement, Conflicts of Interest and numbered references.\n\n## Repository and upload status\n\n- Processed data, source-data CSVs, code, documentation and figure assets are publicly available in the fixed v1.0.5 release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.5.\n- The main Word file includes all Figures 1-5 after their first citation; Supporting Materials is supplied as a separate Word/PDF package.\n- Confirm author-system metadata, including emails and ORCIDs where available, before final MDPI submission.\n\nThe official *Agriculture* instructions require square-bracket numeric citations, a ca. 200-word single-paragraph abstract, three to ten keywords, the Article section order, and the back-matter declarations included here.\n"""
+    text = """# Agriculture (MDPI) Submission Package\n\nThis package follows the *Agriculture* Article structure: title and author front matter, abstract, keywords, Introduction, Materials and Methods, Results, Discussion, Conclusions, Supplementary Materials, Author Contributions, Funding, Data Availability Statement, Conflicts of Interest and numbered references.\n\n## Repository and upload status\n\n- Processed data, source-data CSVs, code, documentation and figure assets are publicly available in the fixed v1.0.6 release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.6.\n- The main Word file includes all Figures 1-5 after their first citation; Supporting Materials is supplied as a separate Word/PDF package.\n- Confirm author-system metadata, including emails and ORCIDs where available, before final MDPI submission.\n\nThe official *Agriculture* instructions require square-bracket numeric citations, a ca. 200-word single-paragraph abstract, three to ten keywords, the Article section order, and the back-matter declarations included here.\n"""
     (OUT / "README_Agriculture_submission_v1.md").write_text(text, encoding="utf-8")
 
 

@@ -106,7 +106,7 @@ All reported analyses have scripts, result tables and figure-source CSVs. The ra
 
 ## Data and code availability
 
-KBS LTER public yield and weather records are available through the KBS LTER Data Catalog [@kbs_lter_public_downloads]. The processed analysis panels, figure-source CSVs, bootstrap and permutation draws, scripts, environment specification and documentation supporting this article are publicly available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.5. Provider-controlled data are not redistributed or used in the analyses reported here.
+KBS LTER public yield and weather records are available through the KBS LTER Data Catalog [@kbs_lter_public_downloads]. The processed analysis panels, figure-source CSVs, bootstrap and permutation draws, scripts, environment specification and documentation supporting this article are publicly available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.6. Provider-controlled data are not redistributed or used in the analyses reported here.
 
 ## References
 
