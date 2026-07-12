@@ -1,4 +1,4 @@
-"""Build an Agriculture (MDPI) Article-formatted submission package.
+﻿"""Build an Agriculture (MDPI) Article-formatted submission package.
 
 The journal accepts free-format initial submissions, but this builder applies
 the current required Article order and back-matter statements for a cleaner
@@ -357,7 +357,7 @@ def build_main() -> None:
     doc.add_heading("Informed Consent Statement", level=1)
     add_plain(doc, "Not applicable.")
     doc.add_heading("Data Availability Statement", level=1)
-    add_plain(doc, "Public KBS LTER yield and weather records are available through the KBS LTER Data Catalog. The processed analysis panels, figure-source data, bootstrap and permutation outputs, code, environment specification and documentation supporting this article are available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.7. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.")
+    add_plain(doc, "Public KBS LTER yield and weather records are available through the KBS LTER Data Catalog. The processed analysis panels, figure-source data, bootstrap and permutation outputs, code, environment specification and documentation supporting this article are available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.8. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.")
     doc.add_heading("Acknowledgments", level=1)
     add_plain(doc, "The authors acknowledge the Kellogg Biological Station Long-Term Ecological Research program and its data contributors for maintaining the public records used in this study.")
     doc.add_heading("Use of Generative AI and AI-Assisted Technologies in the Writing Process", level=1)
@@ -427,7 +427,7 @@ def build_supporting() -> None:
 
 
 def write_readme() -> None:
-    text = """# Agriculture (MDPI) Submission Package\n\nThis package follows the *Agriculture* Article structure: title and author front matter, abstract, keywords, Introduction, Materials and Methods, Results, Discussion, Conclusions, Supplementary Materials, Author Contributions, Funding, Data Availability Statement, Conflicts of Interest and numbered references.\n\n## Repository and upload status\n\n- Processed data, source-data CSVs, code, documentation and figure assets are publicly available in the fixed v1.0.7 release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.7.\n- The main Word file includes all Figures 1-5 after their first citation; Supporting Materials is supplied as a separate Word/PDF package.\n- Confirm author-system metadata, including emails and ORCIDs where available, before final MDPI submission.\n\nThe official *Agriculture* instructions require square-bracket numeric citations, a ca. 200-word single-paragraph abstract, three to ten keywords, the Article section order, and the back-matter declarations included here.\n"""
+    text = """# Agriculture (MDPI) Submission Package\n\nThis package follows the *Agriculture* Article structure: title and author front matter, abstract, keywords, Introduction, Materials and Methods, Results, Discussion, Conclusions, Supplementary Materials, Author Contributions, Funding, Data Availability Statement, Conflicts of Interest and numbered references.\n\n## Repository and upload status\n\n- Processed data, source-data CSVs, code, documentation and figure assets are publicly available in the fixed v1.0.8 release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.8.\n- The main Word file includes all Figures 1-5 after their first citation; Supporting Materials is supplied as a separate Word/PDF package.\n- Confirm author-system metadata, including emails and ORCIDs where available, before final MDPI submission.\n\nThe official *Agriculture* instructions require square-bracket numeric citations, a ca. 200-word single-paragraph abstract, three to ten keywords, the Article section order, and the back-matter declarations included here.\n"""
     (OUT / "README_Agriculture_submission_v1.md").write_text(text, encoding="utf-8")
 
 
@@ -441,3 +441,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

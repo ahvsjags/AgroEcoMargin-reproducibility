@@ -45,7 +45,7 @@ The public RGE yield file preserves the F1–F9 treatment identifier when later 
 
 ## Supplementary Methods 3. Season-level weather exposure
 
-KBS weather data were aggregated over 1 April–31 October for each harvest year. The heat component was the number of growing-season days above 30 °C. The dryness component was the number of growing-season days with precipitation below 1 mm. Each component was standardized across the years available to the relevant analytical panel using the population standard deviation. The primary index was `(heat_z + dry_z) / √2`. Heat-only and dry-day-only models were prespecified component sensitivity analyses; they do not constitute separate outcomes or a search for the strongest threshold. Because every eligible record within a year shares the same weather index, year is the resampling and permutation unit.
+KBS weather data were aggregated over 1 April–31 October for each harvest year. The heat component was the number of growing-season days above 30 °C. The dryness component was the number of growing-season days with precipitation below 1 mm. Each component was standardized across the years available to the relevant analytical panel using the population standard deviation. The primary index was `(heat_z + dry_z) / √2`. Heat-only and dry-day-only models were prespecified component sensitivity analyses rather than separate outcomes or a search for the strongest threshold. Because every eligible record within a year shares the same weather index, year is the resampling and permutation unit.
 
 ## Supplementary Methods 4. Nitrogen-response and irrigation models
 
@@ -57,7 +57,7 @@ Y_{ipt} = \alpha_p + \gamma_t + \delta_cN_{ipt} + \beta N_{ipt}S_t + \tau N_{ipt
 
 Here, *Y* is yield; *p*, *t* and *c* index plot, year and crop group; *N* is nitrogen in 100 kg N ha⁻¹ units; *S* is the standardized heat-dry index; and *T* is centered time in decades. `C(year)` and `C(plot)` implement fixed effects, and `C(crop_group):n100` implements crop-specific nitrogen slopes. One crop group is observed in each harvest year, so crop intercepts are perfectly collinear with year fixed effects and are not separately estimable. The estimand *beta* is the change in the marginal nitrogen response for a one-standard-deviation increase in the heat-dry index.
 
-The concurrent irrigation model was estimated for 2003--2025 and added nitrogen-by-irrigation and nitrogen-by-heat-dry-by-irrigation terms to the same fixed-effect structure. The three-way coefficient is the irrigated-minus-rainfed difference in the heat-dry nitrogen response and is interpreted as an irrigation contrast, not as a direct manipulation of weather.
+The concurrent irrigation model was estimated for 2003--2025 and added nitrogen-by-irrigation and nitrogen-by-heat-dry-by-irrigation terms to the same fixed-effect structure. The three-way coefficient is the irrigated-minus-rainfed difference in the heat-dry nitrogen response and is interpreted as an irrigation contrast rather than a direct manipulation of weather.
 
 Conventional model intervals used covariance clustered by harvest year. The rainfed model was additionally refit after excluding each year and after excluding every pair of years (351 deterministic combinations). Complete-year resampling used 240 draws for the rainfed model and 300 draws for the irrigation model. A bootstrap draw retained every eligible record within each sampled year, created a bootstrap-year fixed effect for repeated draws, and refit the prespecified formula. For each of 600 permutations, the observed one-per-year stress values were reassigned across years while all plot-level records and model terms remained fixed. Random seed was 20260710.
 
@@ -83,7 +83,7 @@ The 351 leave-two-year-out estimates ranged from −356.9 to −162.4 kg ha⁻¹
 
 ## Supplementary Methods 5. Plot-level satellite-yield linkage
 
-The satellite analysis used observed MCSE Treatment x Replicate harvest records. Each yield record was linked to a documented Treatment x Replicate plot crosswalk. For an observed harvest date, the final usable temporal bin was the 24-step calendar half-month immediately preceding the harvest half-month; feature trajectories therefore ended before harvest.
+The satellite analysis used observed MCSE Treatment x Replicate harvest records. Each yield record was linked to a documented Treatment x Replicate plot crosswalk. For an observed harvest date, the final usable temporal bin was the 24-step calendar half-month immediately preceding the harvest half-month; feature trajectories ended before harvest.
 
 KBS Landsat and Sentinel-2 Gold cubes supply six reflectance bands (blue, green, red, nir08, swir16 and swir22), `valid_mask`, `clear_fraction`, `obs_count`, `time_gap_days`, `plot_mask` and `plot_id_mask`. Features were summarized only from pixels with the matching positive plot identifier and valid spectral data. For each sensor and plot-year we calculated mean, maximum and final values for reflectance bands, NDVI, NDWI, NBR, clear fraction, observation count, valid fraction, time gap and pixel count. NDVI slope was calculated when at least two valid preharvest bins were available.
 
@@ -95,7 +95,7 @@ The feature builder generated 876 observed MCSE harvest records with a matching 
 
 The management-only comparator used categorical crop group, treatment and replicate. The Landsat feature block consisted of NDVI mean, maximum, final value and slope; NDWI mean; NBR mean; red, nir08, swir16 and swir22 means; and clear-fraction, observation-count, valid-fraction and time-gap means. Each outer fold held out one entire calendar year. Within the remaining years only, categorical variables were one-hot encoded with unknown categories ignored, numeric variables were median-imputed and standardized, and ridge penalty alpha was chosen by GroupKFold grouped by year. The candidate alpha values were 0.1, 1, 10, 100 and 1,000; the number of inner folds was the smaller of five and the number of available training years.
 
-Outer-fold predictions were pooled to calculate root-mean-square error (RMSE), mean absolute error (MAE) and R2. The main text reports RMSE. A 5,000-draw year-block bootstrap recalculated the difference in mean squared error (MSE) between management-only and management-plus-Landsat predictions. To document the full validation process, Figure S9 reports all 37 outer-year RMSE values, outer-fold prediction-versus-observation plots and the ridge penalty selected exclusively within each training set. This procedure assesses the stability of the incremental feature block under calendar-year resampling; it does not create an independent-site validation.
+Outer-fold predictions were pooled to calculate root-mean-square error (RMSE), mean absolute error (MAE) and R2. The main text reports RMSE. A 5,000-draw year-block bootstrap recalculated the difference in mean squared error (MSE) between management-only and management-plus-Landsat predictions. To document the full validation process, Figure S9 reports all 37 outer-year RMSE values, outer-fold prediction-versus-observation plots and the ridge penalty selected exclusively within each training set. This procedure assesses the stability of the incremental feature block under calendar-year resampling within the KBS panel.
 
 ### Table S4. Strict temporal satellite-yield validation
 
@@ -125,7 +125,7 @@ All analyses were run in Python using the pinned environment in `requirements_v7
 
 ## Supplementary Figure Legends
 
-**Figure S1 | Fertilizer-rate schedule audit.** Comparison of every reported public rate with the crop-specific F1–F9 schedule and identification of later blank fields recovered from that schedule. The audit compares provider values before any blank-rate recovery.
+**Figure S1 | Fertilizer-rate schedule verification.** Comparison of every reported public rate with the crop-specific F1–F9 schedule and identification of later blank fields recovered from that schedule. The verification compares provider values before any blank-rate recovery.
 
 **Figure S2 | Full weather-model sensitivity.** Heat-dry, heat-only and dry-day-only nitrogen interaction estimates for rainfed and all-plot specifications, shown with and without the nitrogen-by-time adjustment. Horizontal bars are year-clustered 95% confidence intervals.
 
