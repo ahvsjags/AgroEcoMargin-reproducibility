@@ -2,8 +2,7 @@
 
 The journal accepts free-format initial submissions, but this builder applies
 the current required Article order and back-matter statements for a cleaner
-submission-ready draft. Author, funding, repository and conflict metadata are
-deliberately left as marked fields for author confirmation.
+submission-ready draft.
 """
 
 from __future__ import annotations
@@ -98,16 +97,16 @@ def set_hanging_indent(paragraph) -> None:
 
 def configure_mdpi(doc: Document) -> None:
     section = doc.sections[0]
-    section.top_margin = Inches(0.75)
-    section.bottom_margin = Inches(0.75)
-    section.left_margin = Inches(0.8)
-    section.right_margin = Inches(0.8)
+    section.top_margin = Inches(1.0)
+    section.bottom_margin = Inches(1.0)
+    section.left_margin = Inches(1.0)
+    section.right_margin = Inches(1.0)
     normal = doc.styles["Normal"]
     normal.font.name = "Times New Roman"
-    normal.font.size = Pt(10.5)
-    normal.paragraph_format.line_spacing = 1.08
-    normal.paragraph_format.space_after = Pt(5)
-    for name, size, before, after in (("Heading 1", 12, 13, 5), ("Heading 2", 11, 10, 4), ("Heading 3", 10.5, 8, 3)):
+    normal.font.size = Pt(11)
+    normal.paragraph_format.line_spacing = 1.15
+    normal.paragraph_format.space_after = Pt(6)
+    for name, size, before, after in (("Heading 1", 13, 14, 6), ("Heading 2", 12, 11, 5), ("Heading 3", 11, 9, 4)):
         style = doc.styles[name]
         style.font.name = "Times New Roman"
         style.font.size = Pt(size)
@@ -358,7 +357,7 @@ def build_main() -> None:
     doc.add_heading("Informed Consent Statement", level=1)
     add_plain(doc, "Not applicable.")
     doc.add_heading("Data Availability Statement", level=1)
-    add_plain(doc, "Public KBS LTER yield and weather records are available through the KBS LTER Data Catalog. The processed analysis panels, figure-source data, bootstrap and permutation outputs, code, environment specification and documentation supporting this article are available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.6. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.")
+    add_plain(doc, "Public KBS LTER yield and weather records are available through the KBS LTER Data Catalog. The processed analysis panels, figure-source data, bootstrap and permutation outputs, code, environment specification and documentation supporting this article are available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.7. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.")
     doc.add_heading("Acknowledgments", level=1)
     add_plain(doc, "The authors acknowledge the Kellogg Biological Station Long-Term Ecological Research program and its data contributors for maintaining the public records used in this study.")
     doc.add_heading("Use of Generative AI and AI-Assisted Technologies in the Writing Process", level=1)
@@ -428,7 +427,7 @@ def build_supporting() -> None:
 
 
 def write_readme() -> None:
-    text = """# Agriculture (MDPI) Submission Package\n\nThis package follows the *Agriculture* Article structure: title and author front matter, abstract, keywords, Introduction, Materials and Methods, Results, Discussion, Conclusions, Supplementary Materials, Author Contributions, Funding, Data Availability Statement, Conflicts of Interest and numbered references.\n\n## Repository and upload status\n\n- Processed data, source-data CSVs, code, documentation and figure assets are publicly available in the fixed v1.0.6 release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.6.\n- The main Word file includes all Figures 1-5 after their first citation; Supporting Materials is supplied as a separate Word/PDF package.\n- Confirm author-system metadata, including emails and ORCIDs where available, before final MDPI submission.\n\nThe official *Agriculture* instructions require square-bracket numeric citations, a ca. 200-word single-paragraph abstract, three to ten keywords, the Article section order, and the back-matter declarations included here.\n"""
+    text = """# Agriculture (MDPI) Submission Package\n\nThis package follows the *Agriculture* Article structure: title and author front matter, abstract, keywords, Introduction, Materials and Methods, Results, Discussion, Conclusions, Supplementary Materials, Author Contributions, Funding, Data Availability Statement, Conflicts of Interest and numbered references.\n\n## Repository and upload status\n\n- Processed data, source-data CSVs, code, documentation and figure assets are publicly available in the fixed v1.0.7 release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.7.\n- The main Word file includes all Figures 1-5 after their first citation; Supporting Materials is supplied as a separate Word/PDF package.\n- Confirm author-system metadata, including emails and ORCIDs where available, before final MDPI submission.\n\nThe official *Agriculture* instructions require square-bracket numeric citations, a ca. 200-word single-paragraph abstract, three to ten keywords, the Article section order, and the back-matter declarations included here.\n"""
     (OUT / "README_Agriculture_submission_v1.md").write_text(text, encoding="utf-8")
 
 

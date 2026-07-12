@@ -121,7 +121,7 @@ All analyses were run in Python using the pinned environment in `requirements_v7
 | MCSE plot-yield panel | `analysis_inputs/scripts/102_build_mcse_plot_remote_sensing_yield_panel.py` | `data/03_gold/mcse_plot_remote_sensing_yield_panel_gold.csv` | Harvest-truncated, plot-linked covariate construction |
 | Temporal satellite evaluation | `analysis_inputs/scripts/103_evaluate_mcse_plot_rs_yield_temporal.py` | `outputs/tables/mcse_plot_remote_sensing_temporal_evaluation.csv`; predictions and diagnostic records | Nested leave-one-year-out comparison |
 | Robustness and outer-year diagnostics | `analysis_inputs/scripts/107_submission_robustness_and_remote_diagnostics.py` | Crop-year support, leave-two-year-out estimates and remote outer-year predictions, metrics and selected penalties | Finite-year and temporal-validation diagnostics |
-| Main and Extended Data figures | `analysis_inputs/scripts/105_build_v7_integrity_figure_suite.py`; `analysis_inputs/scripts/106_build_v7_extended_data_figures.py` | `analysis_outputs/figure_source_data_v7/` | Figure generation and panel-level source data |
+| Main and supplementary figures | `analysis_inputs/scripts/105_build_v7_integrity_figure_suite.py`; `analysis_inputs/scripts/106_build_v7_extended_data_figures.py` | `analysis_outputs/figure_source_data_v7/` | Figure generation and panel-level source data |
 
 ## Supplementary Figure Legends
 
