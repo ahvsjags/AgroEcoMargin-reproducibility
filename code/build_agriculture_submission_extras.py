@@ -41,7 +41,7 @@ def main() -> None:
     paragraph(doc, "All authors have read and approved the manuscript and agree to its submission to Agriculture.")
     paragraph(doc, "Thank you for considering this manuscript.")
     paragraph(doc, "Sincerely,")
-    paragraph(doc, "Moyan Li, PhD\nAssistant Professor and Doctoral Supervisor\nHong Kong University of Science and Technology (Guangzhou)\nGuangzhou 510000, China\nmoyanli@hkust-gz.edu.cn")
+    paragraph(doc, "Yuan Cheng, PhD\nDepartment of Materials Science and Engineering\nMonash University, Clayton, VIC 3800, Australia\nyuan.cheng@monash.edu\n\nMoyan Li, PhD\nAssistant Professor and Doctoral Supervisor\nHong Kong University of Science and Technology (Guangzhou)\nGuangzhou 510000, China\nmoyanli@hkust-gz.edu.cn")
     doc.core_properties.title = "Cover letter for Agriculture"
     doc.save(OUT / "Cover_Letter_Agriculture_v1.docx")
     print("Wrote cover letter.")

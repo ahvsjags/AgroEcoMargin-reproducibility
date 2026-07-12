@@ -145,6 +145,7 @@ def add_author_front_matter(doc: Document) -> None:
         ("Pengyuan Xu", "1,3,†"),
         ("Ge Zhang", "4,†"),
         ("Guang Yang", "2,3"),
+        ("Yuan Cheng", "1,*"),
         ("Moyan Li", "3,*"),
     ]
     for index, (name, markers) in enumerate(authors):
@@ -308,7 +309,7 @@ def build_main() -> None:
     add_affiliation(doc, "3", "Hong Kong University of Science and Technology (Guangzhou), Guangzhou 510000, China.")
     add_affiliation(doc, "4", "Zhengzhou University, Zhengzhou 450001, Henan, China.")
     add_plain(doc, "† These authors contributed equally as co-first authors.")
-    add_plain(doc, "* Correspondence: moyanli@hkust-gz.edu.cn (M.L.)")
+    add_plain(doc, "* Correspondence: yuan.cheng@monash.edu (Y.C.); moyanli@hkust-gz.edu.cn (M.L.)")
 
     doc.add_heading("Abstract", level=1)
     add_plain(doc, abstract)
@@ -349,7 +350,7 @@ def build_main() -> None:
     doc.add_heading("Supplementary Materials", level=1)
     add_plain(doc, "The following supporting information is provided with this manuscript: Table S1: Analysis variables and provenance; Table S2: Documented F1–F9 nitrogen schedule; Table S3: Primary estimates and independent weather support; Table S4: Strict temporal satellite-yield validation; Table S5: Reproducibility map; Table S6: Crop-year support and coefficient identification; Figures S1–S10: supplementary diagnostics and validation figures; and source-data CSV files for all main and supplementary figures.")
     doc.add_heading("Author Contributions", level=1)
-    add_plain(doc, "Conceptualization, P.X. and M.L.; Methodology, P.X., G.Z. and G.Y.; Software, P.X.; Validation, P.X., G.Z. and G.Y.; Formal Analysis, P.X.; Investigation, P.X., G.Z. and G.Y.; Resources, G.Y. and M.L.; Data Curation, P.X.; Writing - Original Draft Preparation, P.X.; Writing - Review and Editing, P.X., G.Z., G.Y. and M.L.; Visualization, P.X.; Supervision, M.L.; Project Administration, P.X. and M.L.; Funding Acquisition, M.L. All authors have read and agreed to the published version of the manuscript.")
+    add_plain(doc, "Conceptualization, P.X., Y.C. and M.L.; Methodology, P.X., G.Z., G.Y. and Y.C.; Software, P.X.; Validation, P.X., G.Z. and G.Y.; Formal Analysis, P.X.; Investigation, P.X., G.Z. and G.Y.; Resources, G.Y., Y.C. and M.L.; Data Curation, P.X.; Writing - Original Draft Preparation, P.X.; Writing - Review and Editing, P.X., G.Z., G.Y., Y.C. and M.L.; Visualization, P.X.; Supervision, Y.C. and M.L.; Project Administration, P.X., Y.C. and M.L.; Funding Acquisition, M.L. All authors have read and agreed to the published version of the manuscript.")
     doc.add_heading("Funding", level=1)
     add_plain(doc, "This research was supported by start-up research funding awarded to M.L. by the Hong Kong University of Science and Technology (Guangzhou). No specific grant number applies.")
     doc.add_heading("Institutional Review Board Statement", level=1)
@@ -357,7 +358,7 @@ def build_main() -> None:
     doc.add_heading("Informed Consent Statement", level=1)
     add_plain(doc, "Not applicable.")
     doc.add_heading("Data Availability Statement", level=1)
-    add_plain(doc, "Public KBS LTER yield and weather records are available through the KBS LTER Data Catalog. The processed analysis panels, figure-source data, bootstrap and permutation outputs, code, environment specification and documentation supporting this article are available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.3. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.")
+    add_plain(doc, "Public KBS LTER yield and weather records are available through the KBS LTER Data Catalog. The processed analysis panels, figure-source data, bootstrap and permutation outputs, code, environment specification and documentation supporting this article are available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.4. Provider-controlled raw data are identified by catalog accession and access condition rather than redistributed.")
     doc.add_heading("Use of Generative AI and AI-Assisted Technologies in the Writing Process", level=1)
     add_plain(doc, "During preparation of this manuscript, the authors used OpenAI Codex to assist with language editing, document formatting and reproducible-workflow code refactoring. All analytical decisions, computations, figures and manuscript claims were reviewed and verified by the authors, who take full responsibility for the content of this publication.")
     doc.add_heading("Conflicts of Interest", level=1)
@@ -425,7 +426,7 @@ def build_supporting() -> None:
 
 
 def write_readme() -> None:
-    text = """# Agriculture (MDPI) Submission Package\n\nThis package follows the *Agriculture* Article structure: title and author front matter, abstract, keywords, Introduction, Materials and Methods, Results, Discussion, Conclusions, Supplementary Materials, Author Contributions, Funding, Data Availability Statement, Conflicts of Interest and numbered references.\n\n## Repository and upload status\n\n- Processed data, source-data CSVs, code, documentation and figure assets are publicly available in the fixed v1.0.3 release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.3.\n- The main Word file includes all Figures 1-5 after their first citation; Supporting Materials is supplied as a separate Word/PDF package.\n- Confirm author-system metadata, including emails and ORCIDs where available, before final MDPI submission.\n\nThe official *Agriculture* instructions require square-bracket numeric citations, a ca. 200-word single-paragraph abstract, three to ten keywords, the Article section order, and the back-matter declarations included here.\n"""
+    text = """# Agriculture (MDPI) Submission Package\n\nThis package follows the *Agriculture* Article structure: title and author front matter, abstract, keywords, Introduction, Materials and Methods, Results, Discussion, Conclusions, Supplementary Materials, Author Contributions, Funding, Data Availability Statement, Conflicts of Interest and numbered references.\n\n## Repository and upload status\n\n- Processed data, source-data CSVs, code, documentation and figure assets are publicly available in the fixed v1.0.4 release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.4.\n- The main Word file includes all Figures 1-5 after their first citation; Supporting Materials is supplied as a separate Word/PDF package.\n- Confirm author-system metadata, including emails and ORCIDs where available, before final MDPI submission.\n\nThe official *Agriculture* instructions require square-bracket numeric citations, a ca. 200-word single-paragraph abstract, three to ten keywords, the Article section order, and the back-matter declarations included here.\n"""
     (OUT / "README_Agriculture_submission_v1.md").write_text(text, encoding="utf-8")
 
 
