@@ -31,7 +31,7 @@ def main() -> None:
     heading.alignment = WD_ALIGN_PARAGRAPH.CENTER
     title = heading.add_run("Cover Letter")
     title.font.name = "Times New Roman"; title.font.size = Pt(15); title.bold = True
-    paragraph(doc, "11 July 2026")
+    paragraph(doc, "12 July 2026")
     paragraph(doc, "Editors, Agriculture")
     paragraph(doc, "Dear Editors,")
     paragraph(doc, "We submit the manuscript ‘Seasonal heat and dryness are associated with lower marginal nitrogen responses in a long-term field experiment’ for consideration as an Article in Agriculture, with Agricultural Systems and Management as the preferred section. The manuscript examines whether the marginal yield response to nitrogen changes across season-level heat and dryness in a 27-year, nine-rate field gradient, and whether a concurrent irrigation contrast moderates that pattern.")

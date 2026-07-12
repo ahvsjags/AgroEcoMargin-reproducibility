@@ -90,7 +90,7 @@ We compared ridge regression using known crop, treatment and replicate against t
 
 ### Reporting and reproducibility
 
-All reported analyses have scripts, result tables and figure-source CSVs. The rate-recovery script fails if any non-missing public fertilizer-rate entry differs from the documented schedule. The computational environment is specified in `requirements_v7_1_20260710.txt`: numpy 2.3.5, pandas 2.3.3, matplotlib 3.10.8, scipy 1.16.0, statsmodels 0.14.6 and scikit-learn 1.8.0. Supplementary Methods list the scripts and source-data products used by each analysis. The reported analyses use public KBS source records only.
+All reported analyses have scripts, result tables and figure-source CSVs. The rate-recovery script fails if any non-missing public fertilizer-rate entry differs from the documented schedule. The computational environment is specified in `requirements_v7_1_20260710.txt`: numpy 2.3.5, pandas 2.3.3, matplotlib 3.10.8, scipy 1.16.0, statsmodels 0.14.6 and scikit-learn 1.8.0. Supplementary Methods list the scripts and source-data products used by each analysis. The reported analyses use public KBS source records only. OpenAI Codex (web application, accessed 12 July 2026) was used to assist with language editing, document formatting and reproducibility-workflow code refactoring; it was not used to generate or select study data, make analytical decisions, or interpret results. All outputs were reviewed and verified by the authors.
 
 ## Figure Legends
 
@@ -106,7 +106,7 @@ All reported analyses have scripts, result tables and figure-source CSVs. The ra
 
 ## Data and code availability
 
-KBS LTER public yield and weather records are available through the KBS LTER Data Catalog [@kbs_lter_public_downloads]. The processed analysis panels, figure-source CSVs, bootstrap and permutation draws, scripts, environment specification and documentation supporting this article are publicly available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.4. Provider-controlled data are not redistributed or used in the analyses reported here.
+KBS LTER public yield and weather records are available through the KBS LTER Data Catalog [@kbs_lter_public_downloads]. The processed analysis panels, figure-source CSVs, bootstrap and permutation draws, scripts, environment specification and documentation supporting this article are publicly available in the fixed release at https://github.com/ahvsjags/AgroEcoMargin-reproducibility/releases/tag/v1.0.5. Provider-controlled data are not redistributed or used in the analyses reported here.
 
 ## References
 
